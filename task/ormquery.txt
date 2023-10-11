@@ -1,0 +1,55 @@
+from task.models import Todos
+
+modelname.objects.create(fieldname=value)
+
+Todos.objects.create(title="water bill",user="Hari")
+
+=> To insert values
+Todos.objects.create(title="water bill",user="hari")
+
+=>To fetch all records
+>>> qs=Todos.objects.all()
+>>> qs
+
+=>to fetch specific records
+>>> qs=Todos.objects.filter(user="hari") 
+>>> qs
+
+=> to fetch specific records by id
+qs=Todos.objects.get(id=2)
+
+=> to fetch specific records by id in range(2,6)
+>>>qs=Todos.objects.get(id__gte=2,id__lte=6)
+>>>qs
+
+=>to delete
+Todos.objects.filter(id=1).delete()
+
+______________________books______________________________
+
+from task.models import Books
+
+Books.objects.create(name="The old man and the sea",author="Ernest",publisher="benedict classic",price=130) 
+Books.objects.create(name="The guide",author="Narayan",publisher="viking press",price=150)
+Books.objects.create(name="Malgudi days",author="Narayan",publisher="Indian thoughts",price=300)
+Books.objects.create(name="Untouchable",author="Anand",publisher="penguin classic",price=150)
+Books.objects.create(name="The white tiger",author="Aravind",publisher="atlantic books",price=320)
+Books.objects.create(name="Thunder god",author="Rajiv menon",publisher="westland",price=400)
+
+
+books by author Narayan
+qs=Books.object.filter(author="Narayan")
+
+to get books in range(2,6)
+qs=Books.objects.filter(id__gte=2,id__lte=6)
+
+to get book where id =3
+qs=Books.objects.get(id=3)
+
+qs=Books.objects.all()
+
+updating the price of book where id =5
+Books.objects.filter(id=5).update(price=340) 
+
+to delete
+Todos.objects.filter(id=1).delete()
